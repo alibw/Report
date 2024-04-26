@@ -1,0 +1,57 @@
+﻿@model List< Report.Models.NewCart>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        th{
+            width:auto;
+            min-width:80px;
+            height:40px;
+            text-align:center;
+            box-sizing:border-box;
+            padding:10px;
+            font-family:Tahoma;
+            font-size:12px;
+            font-weight:normal;
+        }
+        table{
+            border-collapse:collapse;
+            /*direction:rtl;*/
+        }
+    </style>
+</head>
+<body>
+    <table align="center" border="1">
+        <thead>
+            <tr>
+                <th  style="font-weight:bold">پایان</th>
+                <th  style="font-weight:bold">شروع</th>
+                <th  style="font-weight:bold">تاریخ</th>
+                <th  style="font-weight:bold">نام و نام خانوادگی</th>
+                <th style="font-weight:bold">شماره ی پرسنلی</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="cell">
+                    <th>@item.endTime</th>
+                    <th>@item.beginTime</th>
+                    <th>@item.date</th>
+                    <th>@item.fullName</th>
+                    <th>@item.empId</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>
